@@ -15,12 +15,12 @@ async function getData(){
                     
                      <div class="card">
                  <div class="face front">
-                    <img src="${element.image}" alt="">
-                    <h3>Spain</h3>
+                    <img src="${arr[ranIndex][5][1]}" alt="">
+                    <h3>${arr[ranIndex][1][1]}</h3>
                 </div> 
                 <div class="face back">
-                    <h3>Spain</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius harum molestiae iste, nihil doloribus fugiat distinctio ducimus maxime totam nulla fuga odio non aperiam eos?</p>
+                    <h3>${arr[ranIndex][2][1]}</h3>
+                    <p>${arr[ranIndex][3][1]}</p>
                     <div class="link">
                         <a href="#">Details</a>
                     </div>

@@ -191,6 +191,10 @@ body #trips {
     margin: 20px;  
 }
 
+.face p {
+    font-size: .8em;
+    text-align: justify;
+}
 
 #trips .card {
     width: 20%;
