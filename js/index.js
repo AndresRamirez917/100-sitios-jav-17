@@ -1,16 +1,16 @@
 async function getData(){
     const result = await fetch('https://fakestoreapi.com/products/');
     const products = await result.json();
-    const testimonials = ["testimonial-left", "testimonial-rigth", "","testimonial-rigth"]
     //convertir json a array !!!!chimbita
     const arr = products.map(elemento => Object.entries(elemento));
     console.log(arr)
     
     products.forEach(element => {
         const randomInt = randomDescription(1, arr.length);
-        const ranIndex = randomInt
-        for(i = 0; i < testimonials.length; i++){
+        const ranIndex = randomInt;
+        for(i = 0; i <= 3; i++){
             if(element.id == i){
+
                 const cardImage = document.createRange().createContextualFragment(`
                     
                      <div class="card">
@@ -41,6 +41,39 @@ async function getData(){
     });
 }
 
+const btn_validar = document.getElementById('btn-validar')
+const validar =(e) => {
+    e.preventDefault();
+    const nombre = document.getElementById('nombre');
+    const email = document.getElementById('email');
+    const mensaje = document.getElementById('mensaje');
+    const arr = [];
+    const arrMessages = ["Nombre", "Email", "Mensaje"];
+    arr.push(nombre, email, mensaje);
+    for(i = 0; i < arr.length; i++){
+            if(arr[i].value == ""){
+                alert(`El campo ${arrMessages[i]} no puede estar vacío`)
+                return false;
+            }
+        
+    }
+    if(!emaiValido(email.value)){
+        alert("El email no tiene el formato corrupto")
+        return false;
+    }
+    alert("Los datos fueron enviados satisfactoriamente")
+    nombre.value = "";
+    email.value = "";
+    mensaje.value = "";
+    return true;
+    
+}
+
+const emaiValido = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+}
+
+btn_validar.addEventListener("click", validar)
 getData()
 
 
