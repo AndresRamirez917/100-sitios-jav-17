@@ -174,7 +174,7 @@ span {
 }
 
 body #trips {
-    display: flex;
+    /* display: flex; */
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
@@ -189,6 +189,20 @@ body #trips {
     width: 300px;
     height: 350px;
     margin: 20px;  
+}
+
+
+#trips .card {
+    width: 20%;
+   gap: 10px;
+   margin-left: 100px;
+   margin-right: 50px;
+}
+
+#trips h2 {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
 }
 
 ::-webkit-scrollbar {

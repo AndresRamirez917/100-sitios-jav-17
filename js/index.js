@@ -1,7 +1,7 @@
 async function getData(){
     const result = await fetch('https://fakestoreapi.com/products/');
     const products = await result.json();
-    const testimonials = ["testimonial-left", "testimonial-rigth", ""]
+    const testimonials = ["testimonial-left", "testimonial-rigth", "","testimonial-rigth"]
     //convertir json a array !!!!chimbita
     const arr = products.map(elemento => Object.entries(elemento));
     console.log(arr)
@@ -13,13 +13,22 @@ async function getData(){
             if(element.id == i){
                 const cardImage = document.createRange().createContextualFragment(`
                     
-                     <div class="face front">
-                        <img class="image" src="${arr[ranIndex][5][1]}" alt="">
-                        <h3>${arr[ranIndex][1][1]}</h3>
-                    </div> 
+                     <div class="card">
+                 <div class="face front">
+                    <img src="${element.image}" alt="">
+                    <h3>Spain</h3>
+                </div> 
+                <div class="face back">
+                    <h3>Spain</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius harum molestiae iste, nihil doloribus fugiat distinctio ducimus maxime totam nulla fuga odio non aperiam eos?</p>
+                    <div class="link">
+                        <a href="#">Details</a>
+                    </div>
+                </div>
+            </div>
                     
                     `)
-                    const card = document.querySelector('.card')
+                    const card = document.getElementById('trips')
                     card.append(cardImage)
             }
         }

@@ -51,6 +51,16 @@
 }
 
 /* trips */
+#trips .card {
+    margin: 0 auto;
+    width: 50%;
+    margin-bottom: 2rem;
+}
+
+#trips {
+    padding-bottom: 4rem;
+}
+
 .card {
     display: block;
     margin: 50px 0;
