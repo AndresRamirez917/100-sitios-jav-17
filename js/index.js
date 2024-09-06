@@ -52,16 +52,25 @@ const validar =(e) => {
     arr.push(nombre, email, mensaje);
     for(i = 0; i < arr.length; i++){
             if(arr[i].value == ""){
-                alert(`El campo ${arrMessages[i]} no puede estar vacío`)
+                swal({
+                    title: `El campo ${arrMessages[i]} no puede estar vacío`,
+                    icon: "error",
+                     })
                 return false;
             }
         
     }
     if(!emaiValido(email.value)){
-        alert("El email no tiene el formato corrupto")
+        swal({
+            title: `El campo ${arrMessages[1]} no tiene el formato correcto`,
+            icon: "error",
+             })
         return false;
     }
-    alert("Los datos fueron enviados satisfactoriamente")
+    swal({
+        title: `Los datos fueron enviados satisfactoriamente`,
+        icon: "success",
+         })
     nombre.value = "";
     email.value = "";
     mensaje.value = "";
